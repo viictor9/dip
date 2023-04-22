@@ -2,6 +2,12 @@ PRACTICAL No. 6
 AIM:- Brightness enhancement of an image, Contrast Manipulation, image
 negative.
 
+
+Install Image Processing and Signal Processing packages and restart scilab.
+Run this command on console: atomsRemove('scicv')
+Restart scilab
+And run code
+
 Brightness Enhancement
 Code:-
 Clc;
