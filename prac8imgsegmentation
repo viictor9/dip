@@ -1,0 +1,67 @@
+PRACTICAL No. 8
+AIM:- Image Segmentation.
+
+Install Image Processing and Signal Processing packages and restart scilab.
+Run this command on console: atomsRemove('scicv')
+Restart scilab
+And run code
+
+
+(a) Differentiation of Gaussian function.
+clc ;
+close ;
+sigma = input('Enter the value of sigma: ')
+i = -10:.1:10;
+j = -10:.1:10;
+r = sqrt(i.*i+j.*j);
+y = (1/(sigma^2))*(((r.*r)/sigma^2)-1) .* exp(-r.*r/2*sigma^2);
+plot(i,y)
+legend(sprintf('The sigma value is %g',sigma))
+xtitle('Differentiation of Gaussian function')
+
+Output:-
+Enter the value of sigma: 1
+
+
+(b) Differentiation of Gaussian Filter function
+clc ;
+close ;
+sigma1 = input('Enter the value of sigma1: ')
+sigma2 = input ('Enter the value of sigma2: ')
+i = -10:.1:10;
+j = -10:.1:10;
+r = sqrt(i.*i+j.*j);
+y1 = (1/( sigma1^2))*(((r.*r)/sigma1^2)-1) .* exp(-r.*r/2*sigma1^2);
+y2 = (1/( sigma2^2))*(((r.*r)/sigma2^2)-1) .* exp(-r.*r/2*sigma2 ^2);
+y = y1-y2;
+plot(i,y)
+xtitle('Shape of DOG Filter ')
+
+Output:
+Enter the value of sigma1: 4
+Enter the value of sigma2: 1
+
+
+(c) Edge Detection using Different Edge detectors
+close ;
+clc ;
+a = imread('C:\Users\ADMIN\Desktop\flower.jpg');
+a = rgb2gray(a);
+c = edge(a,'sobel');
+d = edge(a,'prewitt');
+e = edge(a,'log');
+f = edge (a,'canny');
+imshow(a)
+title('Original Image')
+figure
+imshow(c)
+title('Sobel')
+figure
+imshow(d)
+title('prewitt')
+figure
+imshow(e)
+title('Log')
+figure
+imshow(f)
+title('Canny')
